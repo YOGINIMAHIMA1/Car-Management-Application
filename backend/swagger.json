@@ -1,0 +1,84 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Car Management API",
+      "description": "API for managing cars and users in the Car Management Application",
+      "version": "1.0.0"
+    },
+    "host": "localhost:5000",
+    "basePath": "/api",
+    "paths": {
+      "/users/register": {
+        "post": {
+          "summary": "Register a new user",
+          "parameters": [
+            {
+              "name": "name",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "email",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "/users/login": {
+        "post": {
+          "summary": "Login a user",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "/cars": {
+        "get": {
+          "summary": "Get all cars for a user",
+          "responses": {
+            "200": {
+              "description": "List of cars"
+            }
+          }
+        },
+        "post": {
+          "summary": "Add a new car",
+          "parameters": [
+            {
+              "name": "title",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "description",
+              "in": "body",
+              "required": true,
+              "type": "string"
+            }
+          ]
+        }
+      }
+    }
+  }
+  
